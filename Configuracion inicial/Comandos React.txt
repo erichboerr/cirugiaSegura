@@ -1,0 +1,17 @@
+Crear entorno react
+	npx create-react-app [nombre proyecto]
+
+instalar react-router-dom (en tu proyecto)
+	npm i react-router-dom
+
+instalar json-server (en tu pc)
+	npm install -g json-server
+
+Start json server
+	json-server --watch db.json --port 8080	
+
+instalar axios
+	npm install axios
+
+--------------------------------------------------------------------------------
+

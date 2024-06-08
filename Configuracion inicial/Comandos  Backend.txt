@@ -1,0 +1,27 @@
+backend:
+iniciar un proyecto backend:
+npm init -y
+
+Para ejecutar por consola JS: 
+	node [nombre de archivo].js
+
+"Pagina de express": expressjs.com
+instalar express
+	npm i express
+	npm init en consola para crear package.json
+
+npm i mongoose (asistente de mongodb)
+npm i dotenv (
+
+npm i express-validator (valida la info ants de enviar al servidor)
+
+npm i bcrypt (encriptador de contraseñas)
+
+npm i jsonwebtoken (se utiliza para crear y validar un token)
+
+npm i cors
+
+npm i express-session
+
+npm i cookie-parse
+

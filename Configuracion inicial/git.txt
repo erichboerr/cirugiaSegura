@@ -1,0 +1,140 @@
+Git
+
+configuracion inicial
+	colocar nombre 
+	git config --global user.name "tu nombre"
+	colocar email
+	git config --global user.email "tu mail"
+
+cambiar el editor de texto de git bash
+	git config --global core.editor <"nombre del editor + --wait">
+	ej.: git config --global core.editor "code --wait"
+
+cambiar la cantidad de digitos que muestra en el sha del commit
+	git config --global core.abbrev <numero de digitos>
+	ej.: git config --global core.abbrev 5
+
+Crear repositorio
+	git init <nombre repositorio>
+
+Borrar repositorio
+	rm -rf .git
+
+ver el estado de los archivos 
+	git status
+
+agregar archivos 
+	git add <nombre archivo>
+	git add . (agrega todos los archivos a la vez)
+
+subir al repositorio
+	git commit-m <"mensaje"> -a
+
+Eliminar un archivo
+	git add <nombre archivo> (archivo que fue eliminado previamente)
+	git commit-m <"mensaje"> -a (dejar mensaje del archivo que se elimino)
+
+Restaurar un archivo eliminado
+	git restore <nombre archivo> (Archivo que se quiere restaurar)	
+
+cambiar un commit 
+	git commit --amend 
+	Se abrira en el editor seleccionado un archivo con la data guargada y ahi debemos remplazar el commit existente por el nuevo commit y guardar
+
+agregar archivos a un commit ya creado
+	git add <nombre del archivo> 
+	git commit --amend (con esto se agrega al commit ultimo guardado los cambios cargados)		
+
+anotaciones de commit
+	git tag -a <anotacion> -m <'mensaje'>//anotacion version + mensaje de referencia
+	git tag -l //lista los tag
+	git tag <notacion> <hash del commit referencia se ven con git log> 
+	git tag -d <tag a eliminar>
+	git tag -f -a <anotacion> -m <'mensaje'> <sha de commit a renombrar> 
+		//renombra un tag ya anotado +mensaje
+
+subir al repositorio de github
+	git push -u origin master
+
+git checkout <nombre de archivo>
+	Vuelve atras los cambios en ese archivo a la version que esa en el aea staging.
+	Cambia el archivo local por el que esta en el staging		
+
+pararse sobre un commit
+	git checkout <sha del commit>
+
+revisar la historia del proyecto
+	git log // muestra todo
+	git log -- oneline // muestra info reducida
+	git log -- oneline -graph //muestra el grafico del proyecto en ramas
+	git log -<numero de commit a listar> //ej. git log -3 muestra los ultimos 3 commit
+
+diferencia entre commits
+	git diff <sha> // muestra diferencia entre el 1er commit y el que pasamos
+	git diff <sha1> <sha2> // rojo se quito, verde se agrego
+
+volver a una version anterior
+	git reset --soft <sha del commit donde queremos volver> //quita los cambios de commit pero mantiene los cambios de los archivos
+
+	git reset --mixed <sha del commit donde queremos volver> 
+		//quita los commit en el tiempo y quita los cambios de stag pero mantiene los cambios hechos en los archivos
+	
+	git reset --hard 
+		//quita todo del proyecto hasta ese punto. cuidado no tiene vuelta atras
+		// si tenemos el sha del ultimo commit echo antes de la eliminacion podemos recuperarlo haciendo un --> git reset --hard <sha del ultimo commit>
+
+ignorar archivos para subir al repositorio
+	crear un archivo de .gitignore.txt 
+	(dentro agregar lo que no se quiera subir)
+
+ver en que rama estamos o tenemos
+	git branch -l //lista las ramas existentes (*<nombre> es la rama donde estamos trabajando)
+
+Ramas	
+
+	crear una nueva rama
+		git branch <nombre de la rama>
+
+	crear una nueva rama y pararse sobr ella
+		git switch -c <nombre de la rama>
+
+	pararse sobre la nueva rama
+		git switch <nombre de la rama>	
+
+	eliminar una rama
+		git branch -d <nombre de la rama> (siempre que este vacia)
+		git branch -D <nombre de la rama> (la borra aunque este con commit dentro)
+
+	renombrar una rama
+		git branch -m <nombre actual> <nombre nuevo>
+
+	renombrar la rama en la que estamos parados
+		git branch -m <nombre nuevo>
+	
+	unir dos ramas
+		git marge <nombre de la rama a unir> 
+		// debemos estar parados en la rama que queremos que se unan los cambios. 
+		ej.: queremos unir los cambios de la rama fronted en la rama master -->xxxx (master) git merge fronted
+
+	unir dos ramas (cuando ya has unido otra rama anteriormente) (RECURSIVE)
+		git marge <nombre de la rama a unir> 
+		// debemos estar parados en la rama que queremos que se unan los cambios. 
+		ej.: queremos unir los cambios de la rama fronted en la rama master -->xxxx (master) git merge fronted. En este caso va a pedir que se le coloque un comentario.
+
+	unir dos ramas (con conflicto) 
+	-Es cuando ambas ramas tienen cambios en los mismos archivos.
+		git merge <nombre de la rama a unir> 
+		//luego en el editor uno debe confirmar los cambios que desea conservar, se muestran ambas versiones y hay que eliminar lo que no debe quedar y guardar.
+		Luegos hacer un git add y un commit.
+
+
+
+
+
+
+
+
+
+
+
+
