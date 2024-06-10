@@ -34,7 +34,7 @@ const ModuloDatos = (props) => {
             type="radio"
             name="flexRadioSex"
             id="flexRadioMale"
-            checked
+            
           />
           <label className="form-check-label" htmlFor="flexRadioMale">
             Masculino

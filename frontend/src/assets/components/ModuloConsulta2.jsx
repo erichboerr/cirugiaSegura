@@ -16,10 +16,9 @@ const ModuloConsulta2 = (props) => {
                 type="radio"
                 name="IgieneChk"
                 id="IgieneChkSi"
-                value={1}
-                checked
+                value={1}                
               />
-              <label className="form-check-label" htmlFor="IgieneChk">
+              <label className="form-check-label" htmlFor="IgieneChkSi">
                 Si
               </label>
             </div>
@@ -48,7 +47,6 @@ const ModuloConsulta2 = (props) => {
                 name="HHCCChk"
                 id="HHCCChkSi"
                 value={1}
-                checked
               />
               <label className="form-check-label" htmlFor="HHCCChkSi">
                 Si
@@ -79,7 +77,6 @@ const ModuloConsulta2 = (props) => {
                 name="EstudiosChk"
                 id="EstudiosChkSi"
                 value={1}
-                checked
               />
               <label className="form-check-label" htmlFor="EstudiosChkSi">
                 Si
@@ -93,7 +90,7 @@ const ModuloConsulta2 = (props) => {
                 id="EstudiosChkNo"
                 value={0}
               />
-              <label className="form-check-label" htmlFor="No">
+              <label className="form-check-label" htmlFor="EstudiosChkNo">
                 No
               </label>
             </div>
@@ -110,7 +107,6 @@ const ModuloConsulta2 = (props) => {
                 name="AlergiaChk"
                 id="AlergiaChkSi"
                 value={1}
-                checked
               />
               <label className="form-check-label" htmlFor="AlergiaChkSi">
                 Si
