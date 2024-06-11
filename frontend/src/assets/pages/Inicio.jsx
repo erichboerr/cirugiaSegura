@@ -43,8 +43,7 @@ const Inicio = () => {
             <ModuloServicio titulo="Servicio que interviene:"/>
             <ModuloDestino titulo="Destino del paciente:"/>
             <ModuloSuspencion titulo="La cirugía fue suspendida? Indique la causa:"/>
-            <ModuloCirugiaRealizada titulo="Que cirugía se realizó? Especifique"/>
-            
+            <ModuloCirugiaRealizada titulo="Que cirugía se realizó? Especifique"/>            
         </form>
     </section>
   );

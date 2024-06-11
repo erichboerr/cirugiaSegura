@@ -42,7 +42,7 @@ const ModuloAccesorios = (props) => {
             id="flexCheckPiercing"
           />
           <label className="form-check-label" htmlFor="flexCheckPiercing">
-          Piercing
+            Piercing
           </label>
         </div>
       </div>
@@ -55,7 +55,7 @@ const ModuloAccesorios = (props) => {
             id="flexCheckCollar"
           />
           <label className="form-check-label" htmlFor="flexCheckCollar">
-          Collar
+            Collar
           </label>
         </div>
       </div>
@@ -68,7 +68,7 @@ const ModuloAccesorios = (props) => {
             id="flexCheckPulsera"
           />
           <label className="form-check-label" htmlFor="flexCheckPulsera">
-          Pulsera
+            Pulsera
           </label>
         </div>
       </div>
@@ -81,7 +81,7 @@ const ModuloAccesorios = (props) => {
             id="flexCheckReloj"
           />
           <label className="form-check-label" htmlFor="flexCheckReloj">
-          Reloj
+            Reloj
           </label>
         </div>
       </div>
@@ -94,7 +94,7 @@ const ModuloAccesorios = (props) => {
             id="flexCheckProtesis"
           />
           <label className="form-check-label" htmlFor="flexCheckProtesis">
-          Protesis dental removible
+            Protesis dental removible
           </label>
         </div>
       </div>
@@ -107,7 +107,7 @@ const ModuloAccesorios = (props) => {
             id="flexCheckMovil"
           />
           <label className="form-check-label" htmlFor="flexCheckMovil">
-          Telefono celular
+            Telefono celular
           </label>
         </div>
       </div>
@@ -120,18 +120,10 @@ const ModuloAccesorios = (props) => {
             id="flexCheckRopa"
           />
           <label className="form-check-label" htmlFor="flexCheckRopa">
-          Ropa
+            Ropa
           </label>
         </div>
       </div>
-
-
-
-
-
-
-
-
     </section>
   );
 };
