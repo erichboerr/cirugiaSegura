@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { inputContext } from "../providers/inputDataProvider";
 
 const ModuloQuirofano = (props) => {
+  const {
+    register,
+    formState: { errors },
+  } = useContext(inputContext);
+
   return (
     <section className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded ">
       <div className="title mb-2">
@@ -15,11 +21,16 @@ const ModuloQuirofano = (props) => {
                 type="radio"
                 name="QuirofanoChk"
                 id="QuirofanoChkA"
-                value={"A"}
-                
+                value={"0"}
+                {...register("QuirofanoChk", {
+                  required: {
+                    value: true,
+                    message: "Seleccione una de las opciones",
+                  },
+                })}
               />
               <label className="form-check-label" htmlFor="QuirofanoChkA">
-              A
+                A
               </label>
             </div>
             <div className="form-check">
@@ -28,10 +39,16 @@ const ModuloQuirofano = (props) => {
                 type="radio"
                 name="QuirofanoChk"
                 id="QuirofanoChkB"
-                value={"B"}
+                value={"1"}
+                {...register("QuirofanoChk", {
+                  required: {
+                    value: true,
+                    message: "Seleccione una de las opciones",
+                  },
+                })}
               />
               <label className="form-check-label" htmlFor="QuirofanoChkB">
-              B
+                B
               </label>
             </div>
             <div className="form-check">
@@ -40,13 +57,19 @@ const ModuloQuirofano = (props) => {
                 type="radio"
                 name="QuirofanoChk"
                 id="QuirofanoChkC"
-                value={"C"}
+                value={"2"}
+                {...register("QuirofanoChk", {
+                  required: {
+                    value: true,
+                    message: "Seleccione una de las opciones",
+                  },
+                })}
               />
               <label className="form-check-label" htmlFor="QuirofanoChkC">
-              C
+                C
               </label>
             </div>
-          </div>          
+          </div>
         </div>
         <div className="card text-center col-md-3">
           <div className="card-body">
@@ -56,11 +79,16 @@ const ModuloQuirofano = (props) => {
                 type="radio"
                 name="QuirofanoChk"
                 id="QuirofanoChkD"
-                value={"D"}
-                
+                value={"3"}
+                {...register("QuirofanoChk", {
+                  required: {
+                    value: true,
+                    message: "Seleccione una de las opciones",
+                  },
+                })}
               />
               <label className="form-check-label" htmlFor="QuirofanoChkD">
-              D
+                D
               </label>
             </div>
             <div className="form-check">
@@ -69,10 +97,16 @@ const ModuloQuirofano = (props) => {
                 type="radio"
                 name="QuirofanoChk"
                 id="QuirofanoChkE"
-                value={"E"}
+                value={"4"}
+                {...register("QuirofanoChk", {
+                  required: {
+                    value: true,
+                    message: "Seleccione una de las opciones",
+                  },
+                })}
               />
               <label className="form-check-label" htmlFor="QuirofanoChkE">
-              E
+                E
               </label>
             </div>
             <div className="form-check">
@@ -81,10 +115,16 @@ const ModuloQuirofano = (props) => {
                 type="radio"
                 name="QuirofanoChk"
                 id="QuirofanoChkF"
-                value={"F"}
+                value={"5"}
+                {...register("QuirofanoChk", {
+                  required: {
+                    value: true,
+                    message: "Seleccione una de las opciones",
+                  },
+                })}
               />
               <label className="form-check-label" htmlFor="QuirofanoChkF">
-              F
+                F
               </label>
             </div>
             <div className="form-check">
@@ -93,14 +133,26 @@ const ModuloQuirofano = (props) => {
                 type="radio"
                 name="QuirofanoChk"
                 id="QuirofanoChkMaternidad"
-                value={"Maternidad"}
+                value={"6"}
+                {...register("QuirofanoChk", {
+                  required: {
+                    value: true,
+                    message: "Seleccione una de las opciones",
+                  },
+                })}
               />
-              <label className="form-check-label" htmlFor="QuirofanoChkMaternidad">
-              Maternidad
+              <label
+                className="form-check-label"
+                htmlFor="QuirofanoChkMaternidad"
+              >
+                Maternidad
               </label>
             </div>
-          </div>          
+          </div>
         </div>
+        {errors.QuirofanoChk && (
+          <span className="text-danger">{errors.QuirofanoChk.message}</span>
+        )}
       </div>
     </section>
   );

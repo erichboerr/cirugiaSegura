@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { inputContext } from "../providers/inputDataProvider";
 
-const ModuloConsulta4 = (props) => {
+const ModuloConteoInsumos = (props) => {
+  
+  const {
+    register,
+    formState: { errors },
+  } = useContext(inputContext);
+
   return (
     <section className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded ">
       <div className="title mb-2">
@@ -16,9 +23,18 @@ const ModuloConsulta4 = (props) => {
                 type="radio"
                 name="conteoInstrumentalChk"
                 id="conteoInstrumentalChkSi"
-                value={1}
+                value={"1"}
+                {...register("conteoInstrumentalChk", {
+                  required: {
+                    value: true,
+                    message: "Debe seleccionar una de las opciones",
+                  },
+                })}
               />
-              <label className="form-check-label" htmlFor="conteoInstrumentalChkSi">
+              <label
+                className="form-check-label"
+                htmlFor="conteoInstrumentalChkSi"
+              >
                 Si
               </label>
             </div>
@@ -28,12 +44,24 @@ const ModuloConsulta4 = (props) => {
                 type="radio"
                 name="conteoInstrumentalChk"
                 id="conteoInstrumentalChkNo"
-                value={0}
+                value={"0"}
+                {...register("conteoInstrumentalChk", {
+                  required: {
+                    value: true,
+                    message: "Debe seleccionar una de las opciones",
+                  },
+                })}
               />
-              <label className="form-check-label" htmlFor="conteoInstrumentalChkNo">
+              <label
+                className="form-check-label"
+                htmlFor="conteoInstrumentalChkNo"
+              >
                 No
               </label>
             </div>
+            {errors.conteoInstrumentalChk && (
+        <span className="text-danger">{errors.conteoInstrumentalChk.message}</span>
+      )}
           </div>
         </div>
 
@@ -46,9 +74,18 @@ const ModuloConsulta4 = (props) => {
                 type="radio"
                 name="conteoCortoPunzantesChk"
                 id="conteoCortoPunzantesChkSi"
-                value={1}
+                value={"1"}
+                {...register("conteoCortoPunzantesChk", {
+                  required: {
+                    value: true,
+                    message: "Debe seleccionar una de las opciones",
+                  },
+                })}
               />
-              <label className="form-check-label" htmlFor="conteoCortoPunzantesChkSi">
+              <label
+                className="form-check-label"
+                htmlFor="conteoCortoPunzantesChkSi"
+              >
                 Si
               </label>
             </div>
@@ -58,12 +95,24 @@ const ModuloConsulta4 = (props) => {
                 type="radio"
                 name="conteoCortoPunzantesChk"
                 id="conteoCortoPunzantesChkNo"
-                value={0}
+                value={"0"}
+                {...register("conteoCortoPunzantesChk", {
+                  required: {
+                    value: true,
+                    message: "Debe seleccionar una de las opciones",
+                  },
+                })}
               />
-              <label className="form-check-label" htmlFor="conteoCortoPunzantesChkNo">
+              <label
+                className="form-check-label"
+                htmlFor="conteoCortoPunzantesChkNo"
+              >
                 No
               </label>
             </div>
+            {errors.conteoCortoPunzantesChk && (
+        <span className="text-danger">{errors.conteoCortoPunzantesChk.message}</span>
+      )}
           </div>
         </div>
         <div className="card text-center col-md-3">
@@ -75,7 +124,13 @@ const ModuloConsulta4 = (props) => {
                 type="radio"
                 name="conteoGasasChk"
                 id="conteoGasasChkSi"
-                value={1}
+                value={"1"}
+                {...register("conteoGasasChk", {
+                  required: {
+                    value: true,
+                    message: "Debe seleccionar una de las opciones",
+                  },
+                })}
               />
               <label className="form-check-label" htmlFor="conteoGasasChkSi">
                 Si
@@ -87,12 +142,21 @@ const ModuloConsulta4 = (props) => {
                 type="radio"
                 name="conteoGasasChk"
                 id="conteoGasasChkNo"
-                value={0}
+                value={"0"}
+                {...register("conteoGasasChk", {
+                  required: {
+                    value: true,
+                    message: "Debe seleccionar una de las opciones",
+                  },
+                })}
               />
               <label className="form-check-label" htmlFor="conteoGasasChkNo">
                 No
               </label>
             </div>
+            {errors.conteoGasasChk && (
+        <span className="text-danger">{errors.conteoGasasChk.message}</span>
+      )}
           </div>
         </div>
       </div>
@@ -100,4 +164,4 @@ const ModuloConsulta4 = (props) => {
   );
 };
 
-export default ModuloConsulta4;
+export default ModuloConteoInsumos;

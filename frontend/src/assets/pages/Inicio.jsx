@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+import { inputContext } from "../providers/inputDataProvider";
+
 import ModuloDatos from "../components/ModuloDatos";
 import ModuloHorarios from "../components/ModuloHorarios";
 import ModuloConsulta from "../components/ModuloConsulta";
@@ -10,20 +12,23 @@ import ModuloCirugia from "../components/ModuloCirugia";
 import ModuloProcedencia from "../components/ModuloProcedencia";
 import ModuloAnestesia from "../components/ModuloAnestesia";
 import ModuloQuirofano from "../components/ModuloQuirofano";
-import ModuloConsulta3 from "../components/ModuloConsulta3";
+import ModuloTomaMuestras from "../components/ModuloTomaMuestras";
 import ModuloImplantes from "../components/ModuloImplantes";
 import ModuloDrenajes from "../components/ModuloDrenajes";
-import ModuloConsulta4 from "../components/ModuloConsulta4";
+import ModuloConteoInsumos from "../components/ModuloConteoInsumos";
 import ModuloPulsera from "../components/ModuloPulsera";
 import ModuloServicio from "../components/ModuloServicio";
 import ModuloDestino from "../components/ModuloDestino";
 import ModuloSuspencion from "../components/ModuloSuspension";
 import ModuloCirugiaRealizada from "../components/ModuloCirugiaRealizada";
 
-const Inicio = () => {
+
+const Inicio = () => { 
+  const { handleSubmit, watch } = useContext(inputContext);
   return (
     <section>
-        <form className="row g-3 mx-3 mt-3">
+        <form className="row g-3 mx-3 mt-3" onSubmit={handleSubmit((data) => console.log(data))}>
+          
             <ModuloDatos titulo="Datos del Paciente"	 />
             <ModuloHorarios titulo="Horarios" />
             <ModuloConsulta titulo="Consulta" />
@@ -35,15 +40,17 @@ const Inicio = () => {
             <ModuloProcedencia titulo="Procedencia del Paciente:" />
             <ModuloAnestesia titulo="Tipo de anestesia utilizada:" />
             <ModuloQuirofano  titulo="Quirófano Asignado:" />
-            <ModuloConsulta3 titulo="Consulta 3" />
+            <ModuloTomaMuestras titulo="Toma de Muestras" />
             <ModuloImplantes titulo="Se colocó alguno de los siguientes implantes:" />
             <ModuloDrenajes titulo="Se colocó alguno de los siguientes drenajes:" />
-            <ModuloConsulta4 titulo="Conteo de Insumos Utilizados" /> 
+            <ModuloConteoInsumos titulo="Conteo de Insumos Utilizados" /> 
             <ModuloPulsera titulo="Pulsera" />
             <ModuloServicio titulo="Servicio que interviene:"/>
             <ModuloDestino titulo="Destino del paciente:"/>
             <ModuloSuspencion titulo="La cirugía fue suspendida? Indique la causa:"/>
-            <ModuloCirugiaRealizada titulo="Que cirugía se realizó? Especifique"/>            
+            <ModuloCirugiaRealizada titulo="Que cirugía se realizó? Especifique"/> 
+            <button type="submit">Enviar</button>     
+            <pre>{JSON.stringify(watch(), null, 2)}</pre>
         </form>
     </section>
   );

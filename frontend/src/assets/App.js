@@ -1,9 +1,13 @@
-import Rutas from './routes/Rutas';
+import InputDataProvider from "./providers/inputDataProvider";
+import "./css/App.css";
+import Rutas from "./routes/Rutas";
 
 function App() {
   return (
     <div className="App">
-      <Rutas />
+      <InputDataProvider>
+        <Rutas />
+      </InputDataProvider>
     </div>
   );
 }

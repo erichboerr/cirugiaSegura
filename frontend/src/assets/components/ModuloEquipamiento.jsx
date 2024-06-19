@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { inputContext } from "../providers/inputDataProvider";
 
 const ModuloEquipamiento = (props) => {
+  const {
+    register,
+    formState: { errors },
+  } = useContext(inputContext);
+
   return (
     <section className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded ">
       <div className="title mb-2">
@@ -10,10 +16,15 @@ const ModuloEquipamiento = (props) => {
         <div className="form-check">
           <input
             className="form-check-input"
+            id="flexCheckNungunEquipamiento"
             type="checkbox"
-            value=""
-            id="flexCheckNunguno"      
-                  
+            value={"0"}
+            {...register("EquipamientoChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })}
           />
           <label className="form-check-label" htmlFor="flexCheckNunguno">
             Ninguno
@@ -24,12 +35,18 @@ const ModuloEquipamiento = (props) => {
         <div className="form-check">
           <input
             className="form-check-input"
-            type="checkbox"
-            value=""
             id="flexCheckElectrobisturí"
+            type="checkbox"
+            value={"1"}
+            {...register("EquipamientoChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })}
           />
           <label className="form-check-label" htmlFor="flexCheckElectrobisturí">
-          Electrobisturí
+            Electrobisturí
           </label>
         </div>
       </div>
@@ -37,12 +54,18 @@ const ModuloEquipamiento = (props) => {
         <div className="form-check">
           <input
             className="form-check-input"
-            type="checkbox"
-            value=""
             id="flexCheckLaparoCO2"
+            type="checkbox"
+            value={"2"}
+            {...register("EquipamientoChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })}
           />
           <label className="form-check-label" htmlFor="flexCheckLaparoCO2">
-          Consola de laparascopía con CO2
+            Consola de laparascopía con CO2
           </label>
         </div>
       </div>
@@ -50,12 +73,18 @@ const ModuloEquipamiento = (props) => {
         <div className="form-check">
           <input
             className="form-check-input"
-            type="checkbox"
-            value=""
             id="flexCheckLaparo"
+            type="checkbox"
+            value={"3"}
+            {...register("EquipamientoChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })}
           />
           <label className="form-check-label" htmlFor="flexCheckLaparo">
-          Consola de laparascopía sin CO2
+            Consola de laparascopía sin CO2
           </label>
         </div>
       </div>
@@ -63,12 +92,18 @@ const ModuloEquipamiento = (props) => {
         <div className="form-check">
           <input
             className="form-check-input"
-            type="checkbox"
-            value=""
             id="flexCheckHarmonic"
+            type="checkbox"
+            value={"4"}
+            {...register("EquipamientoChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })}
           />
           <label className="form-check-label" htmlFor="flexCheckHarmonic">
-          Consola de energía Harmonic
+            Consola de energía Harmonic
           </label>
         </div>
       </div>
@@ -76,23 +111,38 @@ const ModuloEquipamiento = (props) => {
         <div className="form-check">
           <input
             className="form-check-input"
-            type="checkbox"
-            value=""
             id="flexCheckGammaProve"
+            type="checkbox"
+            value={"5"}
+            {...register("EquipamientoChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })}
           />
           <label className="form-check-label" htmlFor="flexCheckGammaProve">
-          Gamma Probe
+            Gamma Probe
           </label>
         </div>
       </div>
-      <div className="mt-3">              
-              <input
-                type="text"
-                className="form-control form-control-sm"
-                id="Otros"
-                placeholder="Otros"
-              />
-            </div>
+      <div className="mt-3">
+        <input
+          type="text"
+          className="form-control form-control-sm"
+          id="Otros"
+          placeholder="Otros"
+          {...register("EquipamientoOtros", {
+            required: {
+              value: true,
+              message: "Debe seleccionar una de las opciones",
+            },
+          })}
+        />
+      </div>
+      {errors.EquipamientoChk && (
+        <span className="text-danger">{errors.AccesoriosChk.message}</span>
+      )}
     </section>
   );
 };

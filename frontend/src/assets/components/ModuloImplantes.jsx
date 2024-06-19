@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { inputContext } from "../providers/inputDataProvider";
 
 const ModuloImplantes = (props) => {
+
+  const {
+    register,
+    formState: { errors },
+  } = useContext(inputContext);
+  
   return (
     <section className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded ">
       <div className="title mb-2">
@@ -11,8 +18,14 @@ const ModuloImplantes = (props) => {
           <input
             className="form-check-input"
             type="checkbox"
-            value=""
-            id="flexCheckNunguno"
+            value={"0"}
+            id="flexCheckNungunImplante"  
+            {...register("ImplantesChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })}          
           />
           <label className="form-check-label" htmlFor="flexCheckNunguno">
             Ninguno
@@ -24,8 +37,14 @@ const ModuloImplantes = (props) => {
           <input
             className="form-check-input"
             type="checkbox"
-            value=""
+            value={"1"}
             id="flexCheckMalla"
+            {...register("ImplantesChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })} 
           />
           <label className="form-check-label" htmlFor="flexCheckMalla">
             Malla
@@ -37,8 +56,14 @@ const ModuloImplantes = (props) => {
           <input
             className="form-check-input"
             type="checkbox"
-            value=""
+            value={"2"}
             id="flexCheckPrótesisMama"
+            {...register("ImplantesChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })} 
           />
           <label className="form-check-label" htmlFor="flexCheckPrótesisMama">
             Prótesis de mama
@@ -50,8 +75,14 @@ const ModuloImplantes = (props) => {
           <input
             className="form-check-input"
             type="checkbox"
-            value=""
+            value={"3"}
             id="flexCheckOsteosintesis"
+            {...register("ImplantesChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })} 
           />
           <label className="form-check-label" htmlFor="flexCheckOsteosintesis">
             Material de osteosintesis (placa y tornillos) traumatología
@@ -63,8 +94,14 @@ const ModuloImplantes = (props) => {
           <input
             className="form-check-input"
             type="checkbox"
-            value=""
+            value={"4"}
             id="flexCheckOsteosintesis2"
+            {...register("ImplantesChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })} 
           />
           <label className="form-check-label" htmlFor="flexCheckOsteosintesis2">
             Material de osteosintesis tornillos traumatología
@@ -76,8 +113,14 @@ const ModuloImplantes = (props) => {
           <input
             className="form-check-input"
             type="checkbox"
-            value=""
+            value={"5"}
             id="flexCheckOsteosintesis3"
+            {...register("ImplantesChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })} 
           />
           <label className="form-check-label" htmlFor="flexCheckOsteosintesis3">
             Material de osteosintesis cirugía maxilofacial
@@ -90,8 +133,14 @@ const ModuloImplantes = (props) => {
           <input
             className="form-check-input"
             type="checkbox"
-            value=""
+            value={"6"}
             id="flexCheckCadera"
+            {...register("ImplantesChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })} 
           />
           <label className="form-check-label" htmlFor="flexCheckCadera">
             Prótesis total de cadera
@@ -103,8 +152,14 @@ const ModuloImplantes = (props) => {
           <input
             className="form-check-input"
             type="checkbox"
-            value=""
+            value={"7"}
             id="flexCheckParcialCadera"
+            {...register("ImplantesChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })} 
           />
           <label className="form-check-label" htmlFor="flexCheckParcialCadera">
             Prótesis parcial de cadera
@@ -116,8 +171,14 @@ const ModuloImplantes = (props) => {
           <input
             className="form-check-input"
             type="checkbox"
-            value=""
+            value={"8"}
             id="flexCheckPrótesisRodilla"
+            {...register("ImplantesChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })} 
           />
           <label
             className="form-check-label"
@@ -132,8 +193,14 @@ const ModuloImplantes = (props) => {
           <input
             className="form-check-input"
             type="checkbox"
-            value=""
+            value={"9"}
             id="flexCheckClavoEnfomedular"
+            {...register("ImplantesChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })} 
           />
           <label
             className="form-check-label"
@@ -148,8 +215,14 @@ const ModuloImplantes = (props) => {
           <input
             className="form-check-input"
             type="checkbox"
-            value=""
+            value={"10"}
             id="flexCheckDhs"
+            {...register("ImplantesChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })} 
           />
           <label className="form-check-label" htmlFor="flexCheckDhs">
             Dhs
@@ -161,8 +234,14 @@ const ModuloImplantes = (props) => {
           <input
             className="form-check-input"
             type="checkbox"
-            value=""
+            value={"11"}
             id="flexCheckSuturasMecanicas"
+            {...register("ImplantesChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })} 
           />
           <label
             className="form-check-label"
@@ -177,8 +256,14 @@ const ModuloImplantes = (props) => {
           <input
             className="form-check-input"
             type="checkbox"
-            value=""
+            value={"12"}
             id="flexCheckK108"
+            {...register("ImplantesChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })} 
           />
           <label className="form-check-label" htmlFor="flexCheckK108">
             K 108
@@ -192,8 +277,17 @@ const ModuloImplantes = (props) => {
           className="form-control form-control-sm"
           id="Otros"
           placeholder="Otros"
+          {...register("ImplantesOtros", {
+            required: {
+              value: true,
+              message: "Debe seleccionar una de las opciones",
+            },
+          })} 
         />
       </div>
+      {errors.ImplantesChk && (
+        <span className="text-danger">{errors.ImplantesChk.message}</span>
+      )}
     </section>
   );
 };

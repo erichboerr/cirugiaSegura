@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { inputContext } from "../providers/inputDataProvider";
 
 const ModuloProcedencia = (props) => {
+  const {
+    register,
+    formState: { errors },
+  } = useContext(inputContext);
+
   return (
     <section className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded ">
       <div className="title mb-2">
@@ -15,11 +21,19 @@ const ModuloProcedencia = (props) => {
                 type="radio"
                 name="ProcedenciaChk"
                 id="ProcedenciaChkAmbulatoria"
-                value={"ambulatoria"}
-                
+                value={"0"}
+                {...register("ProcedenciaChk", {
+                  required: {
+                    value: true,
+                    message: "Debe seleccionar una de las opciones",
+                  },
+                })}
               />
-              <label className="form-check-label" htmlFor="ProcedenciaChkAmbulatoria">
-              Ambulatoria
+              <label
+                className="form-check-label"
+                htmlFor="ProcedenciaChkAmbulatoria"
+              >
+                Ambulatoria
               </label>
             </div>
             <div className="form-check">
@@ -28,10 +42,19 @@ const ModuloProcedencia = (props) => {
                 type="radio"
                 name="ProcedenciaChk"
                 id="ProcedenciaChkIntGral"
-                value={"Sala de internación general"}
+                value={"1"}
+                {...register("ProcedenciaChk", {
+                  required: {
+                    value: true,
+                    message: "Debe seleccionar una de las opciones",
+                  },
+                })}
               />
-              <label className="form-check-label" htmlFor="ProcedenciaChkIntGral">
-              Sala de internación general
+              <label
+                className="form-check-label"
+                htmlFor="ProcedenciaChkIntGral"
+              >
+                Sala de internación general
               </label>
             </div>
             <div className="form-check">
@@ -40,13 +63,22 @@ const ModuloProcedencia = (props) => {
                 type="radio"
                 name="ProcedenciaChk"
                 id="ProcedenciaChkIntGuardia"
-                value={"Sala de internación de guardia"}
+                value={"2"}
+                {...register("ProcedenciaChk", {
+                  required: {
+                    value: true,
+                    message: "Debe seleccionar una de las opciones",
+                  },
+                })}
               />
-              <label className="form-check-label" htmlFor="ProcedenciaChkIntGuardia">
-              Sala de internación guardia
+              <label
+                className="form-check-label"
+                htmlFor="ProcedenciaChkIntGuardia"
+              >
+                Sala de internación guardia
               </label>
             </div>
-          </div>          
+          </div>
         </div>
         <div className="card text-center col-md-3">
           <div className="card-body">
@@ -56,11 +88,19 @@ const ModuloProcedencia = (props) => {
                 type="radio"
                 name="ProcedenciaChk"
                 id="ProcedenciaChkShockRoom"
-                value={"Shock room"}
-                
+                value={"3"}
+                {...register("ProcedenciaChk", {
+                  required: {
+                    value: true,
+                    message: "Debe seleccionar una de las opciones",
+                  },
+                })}
               />
-              <label className="form-check-label" htmlFor="ProcedenciaChkShockRoom">
-              Shock room
+              <label
+                className="form-check-label"
+                htmlFor="ProcedenciaChkShockRoom"
+              >
+                Shock room
               </label>
             </div>
             <div className="form-check">
@@ -69,10 +109,19 @@ const ModuloProcedencia = (props) => {
                 type="radio"
                 name="ProcedenciaChk"
                 id="ProcedenciaChkIntIntensivos"
-                value={"Unidad de cuidados intensivos"}
+                value={"4"}
+                {...register("ProcedenciaChk", {
+                  required: {
+                    value: true,
+                    message: "Debe seleccionar una de las opciones",
+                  },
+                })}
               />
-              <label className="form-check-label" htmlFor="ProcedenciaChkIntIntensivos">
-              Unidad de cuidados intensivos
+              <label
+                className="form-check-label"
+                htmlFor="ProcedenciaChkIntIntensivos"
+              >
+                Unidad de cuidados intensivos
               </label>
             </div>
             <div className="form-check">
@@ -81,14 +130,26 @@ const ModuloProcedencia = (props) => {
                 type="radio"
                 name="ProcedenciaChk"
                 id="ProcedenciaChkIntIntermedios"
-                value={"Unidad de cuidados intermedios"}
+                value={"5"}
+                {...register("ProcedenciaChk", {
+                  required: {
+                    value: true,
+                    message: "Debe seleccionar una de las opciones",
+                  },
+                })}
               />
-              <label className="form-check-label" htmlFor="ProcedenciaChkIntIntermedios">
-              Unidad de cuidados intermedios
+              <label
+                className="form-check-label"
+                htmlFor="ProcedenciaChkIntIntermedios"
+              >
+                Unidad de cuidados intermedios
               </label>
             </div>
-          </div>          
+          </div>
         </div>
+        {errors.ProcedenciaChk && (
+          <span className="text-danger">{errors.ProcedenciaChk.message}</span>
+        )}
       </div>
     </section>
   );

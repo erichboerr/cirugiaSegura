@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { inputContext } from "../providers/inputDataProvider";
 
 const ModuloDrenajes = (props) => {
+
+  const {
+    register,
+    formState: { errors },
+  } = useContext(inputContext);
+
   return (
     <section className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded ">
       <div className="title mb-2">
@@ -11,8 +18,14 @@ const ModuloDrenajes = (props) => {
           <input
             className="form-check-input"
             type="checkbox"
-            value=""
+            value={"0"}
             id="flexCheckNunguno"
+            {...register("DrenajeChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })}            
           />
           <label className="form-check-label" htmlFor="flexCheckNunguno">
             Ninguno
@@ -24,8 +37,14 @@ const ModuloDrenajes = (props) => {
           <input
             className="form-check-input"
             type="checkbox"
-            value=""
+            value={"1"}
             id="flexCheckJacksonPratt"
+            {...register("DrenajeChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })}
           />
           <label className="form-check-label" htmlFor="flexCheckJacksonPratt">
             Tipo Jackson Pratt
@@ -37,8 +56,14 @@ const ModuloDrenajes = (props) => {
           <input
             className="form-check-input"
             type="checkbox"
-            value=""
+            value={"2"}
             id="flexCheckLatex"
+            {...register("DrenajeChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })}
           />
           <label className="form-check-label" htmlFor="flexCheckLatex">
             Latex
@@ -50,8 +75,14 @@ const ModuloDrenajes = (props) => {
           <input
             className="form-check-input"
             type="checkbox"
-            value=""
+            value={"3"}
             id="flexCheckK225"
+            {...register("DrenajeChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })}
           />
           <label className="form-check-label" htmlFor="flexCheckK225">
             K 225
@@ -63,8 +94,14 @@ const ModuloDrenajes = (props) => {
           <input
             className="form-check-input"
             type="checkbox"
-            value=""
+            value={"4"}
             id="flexCheckK227"
+            {...register("DrenajeChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })}
           />
           <label className="form-check-label" htmlFor="flexCheckK227">
             K 227
@@ -76,8 +113,14 @@ const ModuloDrenajes = (props) => {
           <input
             className="form-check-input"
             type="checkbox"
-            value=""
+            value={"5"}
             id="flexCheckK10"
+            {...register("DrenajeChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })}
           />
           <label className="form-check-label" htmlFor="flexCheckK10">
             K 10
@@ -91,8 +134,17 @@ const ModuloDrenajes = (props) => {
           className="form-control form-control-sm"
           id="Otros"
           placeholder="Otros"
+          {...register("DrenajeOtros", {
+            required: {
+              value: true,
+              message: "Debe seleccionar una de las opciones",
+            },
+          })}
         />
       </div>
+      {errors.DrenajeChk  && (
+              <span className="text-danger">{errors.AnestesiaChk.message}</span>
+            )}
     </section>
   );
 };

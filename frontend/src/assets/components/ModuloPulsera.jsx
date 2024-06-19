@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+import { inputContext } from "../providers/inputDataProvider";
 
 const ModuloPulsera = (props) => {
+  const {
+    register,
+    formState: { errors },
+  } = useContext(inputContext);
+
   return (
     <section className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded ">
       <div className="title mb-2">
         <h2 className="text-center">{props.titulo}</h2>
       </div>
       <div className="row justify-content-evenly">
-      <div className="card text-center col-md-3">
+        <div className="card text-center col-md-3">
           <div className="card-body">
             <h5>El paciente se retira con pulsera identificatoria colocada:</h5>
             <div className="form-check">
@@ -16,7 +22,13 @@ const ModuloPulsera = (props) => {
                 type="radio"
                 name="PulseraOutChk"
                 id="PulseraOutChkSi"
-                value={1}
+                value={"1"}
+                {...register("PulseraOutChk", {
+                  required: {
+                    value: true,
+                    message: "Debe seleccionar una de las opciones",
+                  },
+                })}
               />
               <label className="form-check-label" htmlFor="PulseraOutChkSi">
                 Si
@@ -28,14 +40,25 @@ const ModuloPulsera = (props) => {
                 type="radio"
                 name="PulseraOutChk"
                 id="PulseraOutChkNo"
-                value={0}
+                value={"0"}
+                {...register("PulseraOutChk", {
+                  required: {
+                    value: true,
+                    message: "Debe seleccionar una de las opciones",
+                  },
+                })}
               />
               <label className="form-check-label" htmlFor="PulseraOutChkNo">
                 No
               </label>
             </div>
+            {errors.PulseraOutChk && (
+              <span className="text-danger">
+                {errors.PulseraOutChk.message}
+              </span>
+            )}
           </div>
-        </div> 
+        </div>
       </div>
     </section>
   );
