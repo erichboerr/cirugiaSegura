@@ -5,11 +5,10 @@ const ModuloSuspencion = (props) => {
   const {
     register,
     formState: { errors },
-    setValue,
   } = useContext(inputContext);
 
   return (
-    <section className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded ">
+    <section className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded suspension ">
       <div className="title mb-2">
         <h2 className="text-center">{props.titulo}</h2>
       </div>
@@ -120,7 +119,7 @@ const ModuloSuspencion = (props) => {
         <input
           type="text"
           className="form-control form-control-sm"
-          id="Otros"
+          id="suspensionOtros"
           placeholder="Otros"          
           {...register("SuspensionOtros")}
         />

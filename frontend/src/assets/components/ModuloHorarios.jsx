@@ -1,14 +1,13 @@
 import React, { useContext } from "react";
 import { inputContext } from "../providers/inputDataProvider";
 const ModuloHorarios = (props) => {
+  const {
+    register,
+    formState: { errors },
+  } = useContext(inputContext);
 
-  const { register, formState: { errors } } = useContext(inputContext);
-  
   return (
-    <section
-      className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded"
-      id="SeccionHorarios"
-    >
+    <section className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded horarios">
       <div className="title mb-2">
         <h2 className="text-center">Horarios</h2>
       </div>
@@ -37,10 +36,9 @@ const ModuloHorarios = (props) => {
                 required: {
                   value: true,
                   message: "Este campo es requerido",
-                },
+                },                
               })}
             />
-
             <label htmlFor="inputOut" className="form-label">
               Egreso:{" "}
               {errors.AreaQXOut && (

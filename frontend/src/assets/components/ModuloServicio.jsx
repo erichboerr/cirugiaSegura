@@ -8,7 +8,7 @@ const ModuloServicio = (props) => {
   } = useContext(inputContext);
 
   return (
-    <section className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded ">
+    <section className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded servicio ">
       <div className="title mb-2">
         <h2 className="text-center">{props.titulo}</h2>
       </div>

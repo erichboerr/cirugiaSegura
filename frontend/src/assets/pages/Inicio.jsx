@@ -25,9 +25,11 @@ import ModuloCirugiaRealizada from "../components/ModuloCirugiaRealizada";
 
 const Inicio = () => { 
   const { handleSubmit, watch } = useContext(inputContext);
+
   return (
     <section>
-        <form className="row g-3 mx-3 mt-3" onSubmit={handleSubmit((data) => console.log(data))}>
+      <h1 className="text-center mt-3">CIRUGÍA SEGURA</h1>
+        <form className="row g-3 mx-3 mt-3" onSubmit={handleSubmit((data) => {console.log(data)})}>
           
             <ModuloDatos titulo="Datos del Paciente"	 />
             <ModuloHorarios titulo="Horarios" />

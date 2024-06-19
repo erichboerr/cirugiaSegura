@@ -8,7 +8,7 @@ const ModuloDestino = (props) => {
   } = useContext(inputContext);
 
   return (
-    <section className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded ">
+    <section className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded destino ">
       <div className="title mb-2">
         <h2 className="text-center">{props.titulo}</h2>
       </div>
@@ -31,7 +31,7 @@ const ModuloDestino = (props) => {
               />
               <label
                 className="form-check-label"
-                htmlFor="conteoInstrumentalChkSi"
+                htmlFor="destinoPacienteChkAmbulatorio"
               >
                 Ambulatorio
               </label>
@@ -52,7 +52,7 @@ const ModuloDestino = (props) => {
               />
               <label
                 className="form-check-label"
-                htmlFor="conteoCortoPunzantesChkSi"
+                htmlFor="destinoPacienteChkIntGral"
               >
                 Sala de internación general
               </label>
@@ -73,7 +73,7 @@ const ModuloDestino = (props) => {
               />
               <label
                 className="form-check-label"
-                htmlFor="conteoCortoPunzantesChkSi"
+                htmlFor="destinoPacienteChkUTI"
               >
                 UTI
               </label>
@@ -94,7 +94,7 @@ const ModuloDestino = (props) => {
               />
               <label
                 className="form-check-label"
-                htmlFor="conteoCortoPunzantesChkSi"
+                htmlFor="destinoPacienteChkUCI"
               >
                 UCI
               </label>
@@ -120,7 +120,7 @@ const ModuloDestino = (props) => {
               />
               <label
                 className="form-check-label"
-                htmlFor="conteoCortoPunzantesChkSi"
+                htmlFor="destinoPacienteChkIntGuardia"
               >
                 Internación de guardia
               </label>
@@ -141,7 +141,7 @@ const ModuloDestino = (props) => {
               />
               <label
                 className="form-check-label"
-                htmlFor="conteoCortoPunzantesChkSi"
+                htmlFor="destinoPacienteChkShockRoom"
               >
                 Shock Room
               </label>
@@ -160,7 +160,7 @@ const ModuloDestino = (props) => {
                   },
                 })}
               />
-              <label className="form-check-label" htmlFor="conteoGasasChkSi">
+              <label className="form-check-label" htmlFor="conteoGasasChkMorgue">
                 Morgue
               </label>
             </div>

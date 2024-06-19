@@ -9,7 +9,7 @@ const ModuloDrenajes = (props) => {
   } = useContext(inputContext);
 
   return (
-    <section className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded ">
+    <section className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded drenaje ">
       <div className="title mb-2">
         <h2 className="text-center">{props.titulo}</h2>
       </div>
@@ -19,7 +19,7 @@ const ModuloDrenajes = (props) => {
             className="form-check-input"
             type="checkbox"
             value={"0"}
-            id="flexCheckNunguno"
+            id="flexCheckNungunDrenaje"
             {...register("DrenajeChk", {
               required: {
                 value: true,
@@ -27,7 +27,7 @@ const ModuloDrenajes = (props) => {
               },
             })}            
           />
-          <label className="form-check-label" htmlFor="flexCheckNunguno">
+          <label className="form-check-label" htmlFor="flexCheckNungunDrenaje">
             Ninguno
           </label>
         </div>
@@ -132,7 +132,7 @@ const ModuloDrenajes = (props) => {
         <input
           type="text"
           className="form-control form-control-sm"
-          id="Otros"
+          id="drenajeOtros"
           placeholder="Otros"
           {...register("DrenajeOtros", {
             required: {
@@ -143,7 +143,7 @@ const ModuloDrenajes = (props) => {
         />
       </div>
       {errors.DrenajeChk  && (
-              <span className="text-danger">{errors.AnestesiaChk.message}</span>
+              <span className="text-danger">{errors.DrenajeChk.message}</span>
             )}
     </section>
   );

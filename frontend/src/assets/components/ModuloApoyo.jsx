@@ -5,11 +5,10 @@ const ModuloApoyo = (props) => {
   const {
     register,
     formState: { errors },
-    watch,
   } = useContext(inputContext);
 
   return (
-    <section className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded ">
+    <section className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded apoyo ">
       <div className="title mb-2">
         <h2 className="text-center">{props.titulo}</h2>
       </div>
@@ -27,7 +26,7 @@ const ModuloApoyo = (props) => {
               },
             })}
           />
-          <label className="form-check-label" htmlFor="flexCheckNunguno">
+          <label className="form-check-label" htmlFor="flexCheckNungunApoyo">
             Ninguno
           </label>
         </div>
@@ -96,7 +95,7 @@ const ModuloApoyo = (props) => {
         <input
           type="text"
           className="form-control form-control-sm"
-          id="Otros"
+          id="apoyoOtros"
           placeholder="Otros"
           {...register("ApoyoOtros", {
             required: {
@@ -107,7 +106,7 @@ const ModuloApoyo = (props) => {
         />
       </div>
       {errors.ApoyoChk && (
-        <span className="text-danger">{errors.AccesoriosChk.message}</span>
+        <span className="text-danger">{errors.ApoyoChk.message}</span>
       )}
     </section>
   );

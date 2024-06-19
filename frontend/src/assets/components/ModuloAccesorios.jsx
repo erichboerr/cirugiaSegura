@@ -9,7 +9,7 @@ const ModuloAccesorios = (props) => {
 
   return (
     <section
-      className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded"
+      className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded accesorios"
       id="SeccionAccesorios"
     >
       <div className="title mb-2">
@@ -29,7 +29,7 @@ const ModuloAccesorios = (props) => {
               },
             })}
           />
-          <label className="form-check-label" htmlFor="flexCheckNunguno">
+          <label className="form-check-label" htmlFor="flexCheckNungunAccesorio">
             Ninguno
           </label>
         </div>

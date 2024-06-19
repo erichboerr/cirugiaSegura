@@ -3,13 +3,13 @@ import { inputContext } from "../providers/inputDataProvider";
 
 
 const ModuloDatos = (props) => {
- /* const {inputData, setInputData} = useContext(inputContext);*/
+  
  const { register, formState: { errors } } = useContext(inputContext);
 
   return (
     <section
-          className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded"
-          id="SeccionDatosPersonales"
+          className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded DatosPaciente"
+          
         >
           <div className="title mb-2">
             <h2 className="text-center">Datos del Paciente</h2>
@@ -74,7 +74,7 @@ const ModuloDatos = (props) => {
                   message: "Este campo es requerido",
                 },
                 pattern: {
-                  value: /^[a-zA-Z]+$/,
+                  value: /^([A-ZÁÉÍÓÚÑa-zñáéíóúñ]{1,}'?-?[A-ZÁÉÍÓÚÑa-zñáéíóú]+[\s]*)+$/,
                   message: "Este campo solo acepta valores alfabeticos",
                 },
               })}

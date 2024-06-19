@@ -8,7 +8,6 @@ const InputDataProvider = ({ children }) => {
     handleSubmit,
     formState: { errors },
     watch,
-    setValue,
   } = useForm({
     defaultValues: {
       hhcc: "",
@@ -62,7 +61,6 @@ const InputDataProvider = ({ children }) => {
       value={{
         register,
         handleSubmit,
-        setValue,
         formState: { errors },
         watch,
       }}

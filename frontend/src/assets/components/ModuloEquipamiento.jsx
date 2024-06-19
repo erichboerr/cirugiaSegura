@@ -8,7 +8,7 @@ const ModuloEquipamiento = (props) => {
   } = useContext(inputContext);
 
   return (
-    <section className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded ">
+    <section className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded equipamiento ">
       <div className="title mb-2">
         <h2 className="text-center">{props.titulo}</h2>
       </div>
@@ -26,7 +26,7 @@ const ModuloEquipamiento = (props) => {
               },
             })}
           />
-          <label className="form-check-label" htmlFor="flexCheckNunguno">
+          <label className="form-check-label" htmlFor="flexCheckNungunEquipamiento">
             Ninguno
           </label>
         </div>
@@ -126,22 +126,39 @@ const ModuloEquipamiento = (props) => {
           </label>
         </div>
       </div>
+      <div className="col-md-2">
+        <div className="form-check">
+          <input
+            className="form-check-input"
+            id="flexCheckOtros"
+            type="checkbox"
+            value={"6"}
+            {...register("EquipamientoChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })}
+          />
+          <label className="form-check-label" htmlFor="flexCheckOtros">
+            Otros
+          </label>
+          
+        </div>
+      </div>
+
       <div className="mt-3">
         <input
           type="text"
           className="form-control form-control-sm"
-          id="Otros"
-          placeholder="Otros"
-          {...register("EquipamientoOtros", {
-            required: {
-              value: true,
-              message: "Debe seleccionar una de las opciones",
-            },
-          })}
+          id="equipamientoOtros"
+          placeholder="Indique cual?"
+          {...register("EquipamientoOtros")}
         />
       </div>
+
       {errors.EquipamientoChk && (
-        <span className="text-danger">{errors.AccesoriosChk.message}</span>
+        <span className="text-danger">{errors.EquipamientoChk.message}</span>
       )}
     </section>
   );
