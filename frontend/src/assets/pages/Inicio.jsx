@@ -21,39 +21,49 @@ import ModuloServicio from "../components/ModuloServicio";
 import ModuloDestino from "../components/ModuloDestino";
 import ModuloSuspencion from "../components/ModuloSuspension";
 import ModuloCirugiaRealizada from "../components/ModuloCirugiaRealizada";
+import axios from "axios";
 
-
-const Inicio = () => { 
+const Inicio = () => {
   const { handleSubmit, watch } = useContext(inputContext);
+
+  function onsubmit() {
+    const data  = handleSubmit();
+    axios
+      .post("http://localhost:5050", data)
+      .then((res) => console.log(res.data))
+      .then((res) => console.log(res.error));
+    alert("formulario agregado correctamente");
+  }
 
   return (
     <section>
       <h1 className="text-center mt-3">CIRUGÍA SEGURA</h1>
-        <form className="row g-3 mx-3 mt-3" onSubmit={handleSubmit((data) => {console.log(data)})}>
-          
-            <ModuloDatos titulo="Datos del Paciente"	 />
-            <ModuloHorarios titulo="Horarios" />
-            <ModuloConsulta titulo="Consulta" />
-            <ModuloAccesorios titulo="El paciente tiene Accesorios?" />
-            <ModuloConsulta2 titulo="Consulta 2" />
-            <ModuloEquipamiento titulo="El procedimiento requiere alguno de los siguientes equipos?" />
-            <ModuloApoyo titulo="El procedimiento requiere de algunos de los siguientes servicios de apoyo:" />
-            <ModuloCirugia titulo="Tipo de Cirugía:" />
-            <ModuloProcedencia titulo="Procedencia del Paciente:" />
-            <ModuloAnestesia titulo="Tipo de anestesia utilizada:" />
-            <ModuloQuirofano  titulo="Quirófano Asignado:" />
-            <ModuloTomaMuestras titulo="Toma de Muestras" />
-            <ModuloImplantes titulo="Se colocó alguno de los siguientes implantes:" />
-            <ModuloDrenajes titulo="Se colocó alguno de los siguientes drenajes:" />
-            <ModuloConteoInsumos titulo="Conteo de Insumos Utilizados" /> 
-            <ModuloPulsera titulo="Pulsera" />
-            <ModuloServicio titulo="Servicio que interviene:"/>
-            <ModuloDestino titulo="Destino del paciente:"/>
-            <ModuloSuspencion titulo="La cirugía fue suspendida? Indique la causa:"/>
-            <ModuloCirugiaRealizada titulo="Que cirugía se realizó? Especifique"/> 
-            <button type="submit">Enviar</button>     
-            <pre>{JSON.stringify(watch(), null, 2)}</pre>
-        </form>
+      <form className="row g-3 mx-3 mt-3" >
+        <ModuloDatos titulo="Datos del Paciente" />
+        <ModuloHorarios titulo="Horarios" />
+        <ModuloConsulta titulo="Consulta" />
+        <ModuloAccesorios titulo="El paciente tiene Accesorios?" />
+        <ModuloConsulta2 titulo="Consulta 2" />
+        <ModuloEquipamiento titulo="El procedimiento requiere alguno de los siguientes equipos?" />
+        <ModuloApoyo titulo="El procedimiento requiere de algunos de los siguientes servicios de apoyo:" />
+        <ModuloCirugia titulo="Tipo de Cirugía:" />
+        <ModuloProcedencia titulo="Procedencia del Paciente:" />
+        <ModuloAnestesia titulo="Tipo de anestesia utilizada:" />
+        <ModuloQuirofano titulo="Quirófano Asignado:" />
+        <ModuloTomaMuestras titulo="Toma de Muestras" />
+        <ModuloImplantes titulo="Se colocó alguno de los siguientes implantes:" />
+        <ModuloDrenajes titulo="Se colocó alguno de los siguientes drenajes:" />
+        <ModuloConteoInsumos titulo="Conteo de Insumos Utilizados" />
+        <ModuloPulsera titulo="Pulsera" />
+        <ModuloServicio titulo="Servicio que interviene:" />
+        <ModuloDestino titulo="Destino del paciente:" />
+        <ModuloSuspencion titulo="La cirugía fue suspendida? Indique la causa:" />
+        <ModuloCirugiaRealizada titulo="Que cirugía se realizó? Especifique" />
+        <div className="col-12 mx-3">
+          <button className="btn btn-primary" onClick={onsubmit}>Enviar</button>
+        </div>
+        <pre>{JSON.stringify(watch(), null, 2)}</pre>
+      </form>
     </section>
   );
 };
