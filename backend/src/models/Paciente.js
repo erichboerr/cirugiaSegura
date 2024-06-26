@@ -9,7 +9,13 @@ const Paciente = db.define("Paciente", {
     type: DataTypes.STRING,
   },
   t_sexo_id: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.TINYINT,
+  },
+  createdAt: {
+    type: DataTypes.DATE,
+  },
+  updatedAt: {
+    type: DataTypes.DATE,
   },
 });
 

@@ -4,27 +4,24 @@ import HistoriaClinica from "../models/HistoriaClinica.js";
 export const createPaciente = async (req, res) => {
   try {
     //desestructuramos lo que viene por body
-    const { dni, nombre, t_sexo_id, Hc } = req.body;
-    //creamos el paciente
-    
-    
-    
-      
-    
+    const { dni, nombre, t_sexo_id, HHCC } = req.body;
+    //creamos el paciente 
+    console.log(req.body); 
+    console.log("HHCC: "+HHCC);  
       const paciente = await Paciente.create({
         dni: dni,
         nombre: nombre,
         t_sexo_id: t_sexo_id,
       });      
-
-      var id = paciente.id;
-      
-
+      console.log(paciente);
+      var id = paciente.id; 
+      console.log("HHCC: "+HHCC);
     //creamos la historia clinica
-    const historiaClinica = await HistoriaClinica.create({
-      HHCC: Hc,
+    const historiaClinica = await HistoriaClinica.create({      
+      HHCC: HHCC,
       PacienteId: id,
     });
+    console.log(historiaClinica);
     res.json("paciente creado");
   } catch (error) {
     res.json({ message: error.message });

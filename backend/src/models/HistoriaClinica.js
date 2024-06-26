@@ -6,15 +6,14 @@ const HistoriaClinica = sequelize.define(
   "HistoriasClinicas",
   {
     HHCC: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
     },
   },
   {
     timestamps: false,
   }
-  
 );
 
-Paciente.hasOne(HistoriaClinica );
+Paciente.hasOne(HistoriaClinica);
 
 export default HistoriaClinica;

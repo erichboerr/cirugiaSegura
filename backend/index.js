@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/", rutas);
 
 //Reiniciando tablas true borra la tablas y la crea de nuevo
-db.sync({ force: false }).then(() => {
+db.sync({ force: true }).then(() => {
   console.log("Base de datos sincronizada");
 });
 //Conexion

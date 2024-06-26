@@ -22,7 +22,7 @@ const ModuloDatos = (props) => {
               type="text"
               className="form-control"
               id="inputHHCC"
-              {...register("hhcc", {
+              {...register("HHCC", {
                 required: {
                   value: true,
                   message: "Este campo es requerido",
@@ -33,8 +33,8 @@ const ModuloDatos = (props) => {
                 },
               })}
             />
-            {errors.hhcc && (
-              <span className="text-danger">{errors.hhcc.message}</span>
+            {errors.HHCC && (
+              <span className="text-danger">{errors.HHCC.message}</span>
             )}
           </div>
           <div className="col-md-6 mb-4">
@@ -94,7 +94,7 @@ const ModuloDatos = (props) => {
                 id="flexRadioMale"
                 name="flexRadioSex"
                 value={"0"}
-                {...register("sexo", {
+                {...register("t_sexo_id", {
                   required: {
                     value: true,
                     message: "Este campo es requerido",
@@ -119,7 +119,7 @@ const ModuloDatos = (props) => {
                 id="flexRadioFemale"
                 name="flexRadioSex"
                 value={"1"}
-                {...register("sexo")}
+                {...register("t_sexo_id")}
               />
               <label className="form-check-label" htmlFor="flexRadioFemale">
                 Femenino
@@ -132,14 +132,14 @@ const ModuloDatos = (props) => {
                 id="flexRadioOther"
                 name="flexRadioSex"
                 value={"2"}
-                {...register("sexo")}
+                {...register("t_sexo_id")}
               />
               <label className="form-check-label" htmlFor="flexRadioOther">
                 Otros
               </label>
             </div>
-            {errors.sexo && (
-              <span className="text-danger">{errors.sexo.message}</span>
+            {errors.t_sexo_id && (
+              <span className="text-danger">{errors.t_sexo_id.message}</span>
             )}
           </div>
         </section>

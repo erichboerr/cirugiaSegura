@@ -10,11 +10,11 @@ const InputDataProvider = ({ children }) => {
     watch,
   } = useForm({
     defaultValues: {
-      hhcc: "",
+      HHCC: "",
       dni: "",
       nombre: "",
-      sexo: "",
-      AreaQXInit: "",
+      t_sexo_id: "",
+      /*AreaQXInit: "",
       AreaQXOut: "",
       QuirofanoInit: "",
       QuirofanoOut: "",
@@ -52,7 +52,7 @@ const InputDataProvider = ({ children }) => {
       destinoPacienteChk: "",
       SuspensionChk: [],
       SuspensionOtros: "",
-      cirugiaRealizada: "",
+      cirugiaRealizada: "",*/
     },
   });
 
