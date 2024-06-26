@@ -26,19 +26,18 @@ import axios from "axios";
 const Inicio = () => {
   const { handleSubmit, watch } = useContext(inputContext);
 
-  function onsubmit() {
-    const data  = handleSubmit();
+  /*function onsubmit() {
     axios
       .post("http://localhost:5050", data)
       .then((res) => console.log(res.data))
       .then((res) => console.log(res.error));
     alert("formulario agregado correctamente");
-  }
+  }*/
 
   return (
     <section>
       <h1 className="text-center mt-3">CIRUGÍA SEGURA</h1>
-      <form className="row g-3 mx-3 mt-3" >
+      <form className="row g-3 mx-3 mt-3">
         <ModuloDatos titulo="Datos del Paciente" />
         <ModuloHorarios titulo="Horarios" />
         <ModuloConsulta titulo="Consulta" />
@@ -60,7 +59,17 @@ const Inicio = () => {
         <ModuloSuspencion titulo="La cirugía fue suspendida? Indique la causa:" />
         <ModuloCirugiaRealizada titulo="Que cirugía se realizó? Especifique" />
         <div className="col-12 mx-3">
-          <button className="btn btn-primary" onClick={onsubmit}>Enviar</button>
+          <button
+            onClick={handleSubmit((data) => {
+              axios
+                .post("http://localhost:5050", data)
+                .then((res) => console.log(res.data))
+                .then((res) => console.log(res.error));
+              alert("formulario agregado correctamente");
+            })}
+          >
+            Enviar
+          </button>
         </div>
         <pre>{JSON.stringify(watch(), null, 2)}</pre>
       </form>

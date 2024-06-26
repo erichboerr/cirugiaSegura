@@ -1,9 +1,12 @@
 const express = require("express");
 const cors = require("cors");
-
 const app = express();
+require ("dotenv").config();
+
+const PORT = process.env.PORT;
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
 //cors
@@ -19,5 +22,5 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get("/", (_, res) => {res.send("Conexion exitosa")});
-app.listen(5050, () => console.log("Servidor corriendo en http://localhost:5050"));
+
+
