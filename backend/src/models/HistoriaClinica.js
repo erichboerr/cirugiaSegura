@@ -1,8 +1,8 @@
 import { DataTypes } from "sequelize";
-import sequelize from "../database/db.js";
+import db from "../database/db.js";
 import Paciente from "./Paciente.js";
 
-const HistoriaClinica = sequelize.define(
+const HistoriaClinica = db.define(
   "HistoriasClinicas",
   {
     HHCC: {

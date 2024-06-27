@@ -9,7 +9,7 @@ const ModuloHorarios = (props) => {
   return (
     <section className="row shadow-lg p-3 mb-2 bg-body-tertiary rounded horarios">
       <div className="title mb-2">
-        <h2 className="text-center">Horarios</h2>
+        <h2 className="text-center">props.titulo</h2>
       </div>
       <div className="row justify-content-evenly">
         <div className="card text-center col-md-3">
@@ -36,7 +36,7 @@ const ModuloHorarios = (props) => {
                 required: {
                   value: true,
                   message: "Este campo es requerido",
-                },                
+                },
               })}
             />
             <label htmlFor="inputOut" className="form-label">

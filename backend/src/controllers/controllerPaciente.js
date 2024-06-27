@@ -1,27 +1,50 @@
 import Paciente from "../models/Paciente.js";
 import HistoriaClinica from "../models/HistoriaClinica.js";
+import Horarios from "../models/Horarios.js";
 
 export const createPaciente = async (req, res) => {
   try {
     //desestructuramos lo que viene por body
-    const { dni, nombre, t_sexo_id, HHCC } = req.body;
-    //creamos el paciente 
-    console.log(req.body); 
-    console.log("HHCC: "+HHCC);  
-      const paciente = await Paciente.create({
-        dni: dni,
-        nombre: nombre,
-        t_sexo_id: t_sexo_id,
-      });      
-      console.log(paciente);
-      var id = paciente.id; 
-      console.log("HHCC: "+HHCC);
+    const {
+      dni,
+      nombre,
+      t_sexo_id,
+      HHCC,
+      AreaQXInit,
+      AreaQXOut,
+      QuirofanoInit,
+      QuirofanoOut,
+      CirugiaInit,
+      CirugiaOut,
+    } = req.body;
+    //creamos el paciente
+    console.log(req.body);
+
+    const paciente = await Paciente.create({
+      dni: dni,
+      nombre: nombre,
+      t_sexo_id: t_sexo_id,
+    });
+    console.log(paciente);
+    var id = paciente.id;
+    console.log("HHCC: " + HHCC);
     //creamos la historia clinica
-    const historiaClinica = await HistoriaClinica.create({      
+    const historiaClinica = await HistoriaClinica.create({
       HHCC: HHCC,
       PacienteId: id,
     });
-    console.log(historiaClinica);
+
+    //cargamos los horarios de la cirugia
+    const horarios = await Horarios.create({
+      AreaQXInit: AreaQXInit,
+      AreaQXOut: AreaQXOut,
+      QuirofanoInit: QuirofanoInit,
+      QuirofanoOut: QuirofanoOut,
+      CirugiaInit: CirugiaInit,
+      CirugiaOut: CirugiaOut,  
+      PacienteId: id,    
+    });
+    
     res.json("paciente creado");
   } catch (error) {
     res.json({ message: error.message });
