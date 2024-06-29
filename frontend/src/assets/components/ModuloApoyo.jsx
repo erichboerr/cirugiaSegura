@@ -18,7 +18,7 @@ const ModuloApoyo = (props) => {
             className="form-check-input"
             id="flexCheckNungunApoyo"
             type="checkbox"
-            value={"0"}
+            value={"Ninguno"}
             {...register("ApoyoChk", {
               required: {
                 value: true,
@@ -38,7 +38,7 @@ const ModuloApoyo = (props) => {
             className="form-check-input"
             id="flexCheckradiologia"
             type="checkbox"
-            value={"1"}
+            value={"Técnico de radiología"}
             {...register("ApoyoChk", {
               required: {
                 value: true,
@@ -58,7 +58,7 @@ const ModuloApoyo = (props) => {
             className="form-check-input"
             id="flexCheckOrtopedia"
             type="checkbox"
-            value={"2"}
+            value={"Técnico de ortopedia"}
             {...register("ApoyoChk", {
               required: {
                 value: true,
@@ -78,7 +78,7 @@ const ModuloApoyo = (props) => {
             className="form-check-input"
             id="flexCheckAnatomia"
             type="checkbox"
-            value={"3"}
+            value={"Anatomía patológica por congelación"}
             {...register("ApoyoChk", {
               required: {
                 value: true,
@@ -91,12 +91,31 @@ const ModuloApoyo = (props) => {
           </label>
         </div>
       </div>
-      <div className="mt-3">
+      <div className="col-md-3">
+        <div className="form-check">
+          <input
+            className="form-check-input"
+            id="flexCheckOtro"
+            type="checkbox"
+            value={"Otros"}
+            {...register("ApoyoChk", {
+              required: {
+                value: true,
+                message: "Debe seleccionar una de las opciones",
+              },
+            })}
+          />
+          <label className="form-check-label" htmlFor="flexCheckOtro">
+            Otros
+          </label>
+        </div>
+      </div>
+      <div className="mt-2">
         <input
           type="text"
           className="form-control form-control-sm"
           id="apoyoOtros"
-          placeholder="Otros"
+          placeholder="Especifique" 
           {...register("ApoyoOtros", {
             required: {
               value: true,
