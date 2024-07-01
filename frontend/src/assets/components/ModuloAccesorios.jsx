@@ -21,7 +21,7 @@ const ModuloAccesorios = (props) => {
             className="form-check-input"
             id="flexCheckNungunAccesorio"
             type="checkbox"
-            value={"0"}
+            value={"Ninguno"}            
             {...register("AccesoriosChk", {
               required: {
                 value: true,
@@ -40,7 +40,7 @@ const ModuloAccesorios = (props) => {
             className="form-check-input"
             id="flexCheckAros"
             type="checkbox"
-            value={"1"}
+            value={"Aros"}
             {...register("AccesoriosChk", {
               required: {
                 value: true,
@@ -59,7 +59,7 @@ const ModuloAccesorios = (props) => {
             className="form-check-input"
             id="flexCheckPiercing"
             type="checkbox"
-            value={"2"}
+            value={"Piercing"}
             {...register("AccesoriosChk", {
               required: {
                 value: true,
@@ -78,7 +78,7 @@ const ModuloAccesorios = (props) => {
             className="form-check-input"
             id="flexCheckCollar"
             type="checkbox"
-            value={"3"}
+            value={"Collar"}
             {...register("AccesoriosChk", {
               required: {
                 value: true,
@@ -97,7 +97,7 @@ const ModuloAccesorios = (props) => {
             className="form-check-input"
             id="flexCheckPulsera"
             type="checkbox"
-            value={"4"}
+            value={"Pulsera"}
             {...register("AccesoriosChk", {
               required: {
                 value: true,
@@ -116,7 +116,7 @@ const ModuloAccesorios = (props) => {
             className="form-check-input"
             id="flexCheckReloj"
             type="checkbox"
-            value={"5"}
+            value={"Reloj"}
             {...register("AccesoriosChk", {
               required: {
                 value: true,
@@ -135,7 +135,7 @@ const ModuloAccesorios = (props) => {
             className="form-check-input"
             id="flexCheckProtesis"
             type="checkbox"
-            value={"6"}
+            value={"Protesis dental removible"}
             {...register("AccesoriosChk", {
               required: {
                 value: true,
@@ -154,7 +154,7 @@ const ModuloAccesorios = (props) => {
             className="form-check-input"
             id="flexCheckMovil"
             type="checkbox"
-            value={"7"}
+            value={"Telefono celular"}
             {...register("AccesoriosChk", {
               required: {
                 value: true,
@@ -173,7 +173,7 @@ const ModuloAccesorios = (props) => {
             className="form-check-input"
             id="flexCheckRopa"
             type="checkbox"
-            value={"8"}
+            value={"Ropa"}
             {...register("AccesoriosChk", {
               required: {
                 value: true,

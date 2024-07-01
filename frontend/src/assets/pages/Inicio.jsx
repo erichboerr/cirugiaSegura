@@ -4,12 +4,12 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import ModuloDatos from "../components/ModuloDatos";
 import ModuloHorarios from "../components/ModuloHorarios";
-/*import ModuloConsulta from "../components/ModuloConsulta";
+import ModuloConsulta from "../components/ModuloConsulta";
 import ModuloAccesorios from "../components/ModuloAccesorios";
 import ModuloConsulta2 from "../components/ModuloConsulta2";
 import ModuloEquipamiento from "../components/ModuloEquipamiento";
 import ModuloApoyo from "../components/ModuloApoyo";
-import ModuloCirugia from "../components/ModuloCirugia";
+/*import ModuloCirugia from "../components/ModuloCirugia";
 import ModuloProcedencia from "../components/ModuloProcedencia";
 import ModuloAnestesia from "../components/ModuloAnestesia";
 import ModuloQuirofano from "../components/ModuloQuirofano";
@@ -47,12 +47,12 @@ const Inicio = () => {
       <form className="row g-3 mx-3 mt-3" >
         <ModuloDatos titulo="Datos del Paciente" />
         <ModuloHorarios titulo="Horarios" />
-        {/*<ModuloConsulta titulo="Consulta" />
+        <ModuloConsulta titulo="Consulta" />
         <ModuloAccesorios titulo="El paciente tiene Accesorios?" />
         <ModuloConsulta2 titulo="Consulta 2" />
         <ModuloEquipamiento titulo="El procedimiento requiere alguno de los siguientes equipos?" />
         <ModuloApoyo titulo="El procedimiento requiere de algunos de los siguientes servicios de apoyo:" />
-        <ModuloCirugia titulo="Tipo de Cirugía:" />
+        {/*<ModuloCirugia titulo="Tipo de Cirugía:" />
         <ModuloProcedencia titulo="Procedencia del Paciente:" />
         <ModuloAnestesia titulo="Tipo de anestesia utilizada:" />
         <ModuloQuirofano titulo="Quirófano Asignado:" />

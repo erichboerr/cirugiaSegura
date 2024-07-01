@@ -1,4 +1,5 @@
 import express from "express";
+import bodyParser from "body-parser";
 import db from "./src/database/db.js";
 import rutas from "./src/routes/Routes.js";
 import dontenv from "dotenv";
@@ -6,9 +7,10 @@ const app = express();
 
 dontenv.config();
 
-const PORT = process.env.PORT || 5050;
+const PORT = process.env.PORT;
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 //Rutas
 app.use("/", rutas);

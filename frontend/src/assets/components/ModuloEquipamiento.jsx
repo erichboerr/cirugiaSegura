@@ -18,7 +18,7 @@ const ModuloEquipamiento = (props) => {
             className="form-check-input"
             id="flexCheckNungunEquipamiento"
             type="checkbox"
-            value={"0"}
+            value={"Ninguno"}
             {...register("EquipamientoChk", {
               required: {
                 value: true,
@@ -37,7 +37,7 @@ const ModuloEquipamiento = (props) => {
             className="form-check-input"
             id="flexCheckElectrobisturí"
             type="checkbox"
-            value={"1"}
+            value={"Electrobisturí"}
             {...register("EquipamientoChk", {
               required: {
                 value: true,
@@ -56,7 +56,7 @@ const ModuloEquipamiento = (props) => {
             className="form-check-input"
             id="flexCheckLaparoCO2"
             type="checkbox"
-            value={"2"}
+            value={"Consola de laparascopía con CO2"}
             {...register("EquipamientoChk", {
               required: {
                 value: true,
@@ -75,7 +75,7 @@ const ModuloEquipamiento = (props) => {
             className="form-check-input"
             id="flexCheckLaparo"
             type="checkbox"
-            value={"3"}
+            value={"Consola de laparascopía sin CO2"}
             {...register("EquipamientoChk", {
               required: {
                 value: true,
@@ -94,7 +94,7 @@ const ModuloEquipamiento = (props) => {
             className="form-check-input"
             id="flexCheckHarmonic"
             type="checkbox"
-            value={"4"}
+            value={"Consola de energía Harmonic"}
             {...register("EquipamientoChk", {
               required: {
                 value: true,
@@ -113,7 +113,7 @@ const ModuloEquipamiento = (props) => {
             className="form-check-input"
             id="flexCheckGammaProve"
             type="checkbox"
-            value={"5"}
+            value={"Gamma Probe"}
             {...register("EquipamientoChk", {
               required: {
                 value: true,
@@ -132,7 +132,7 @@ const ModuloEquipamiento = (props) => {
             className="form-check-input"
             id="flexCheckOtros"
             type="checkbox"
-            value={"6"}
+            value={"Otros"}
             {...register("EquipamientoChk", {
               required: {
                 value: true,
