@@ -60,6 +60,7 @@ const ModuloHorarios = (props) => {
                   message: "Este campo es requerido",
                 },
               })}
+              
             />
           </div>
         </div>
@@ -88,7 +89,7 @@ const ModuloHorarios = (props) => {
                   value: true,
                   message: "Este campo es requerido",
                 },
-              })}
+              })}              
             />
             <label htmlFor="inputOutQX" className="form-label">
               Egreso:{" "}
